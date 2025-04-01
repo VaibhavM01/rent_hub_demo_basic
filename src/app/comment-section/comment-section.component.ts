@@ -22,7 +22,7 @@ export class CommentSectionComponent implements OnInit {
   ngOnInit() {
 this.commentForm = this.fb.group({
       user: ['', Validators.required],       // Name of commenter
-      message: ['', Validators.required]     // Comment text
+      message: ['',Validators.maxLength(90), Validators.required]     // Comment text
     });
  
     this.loadComments();

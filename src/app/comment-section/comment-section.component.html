@@ -8,6 +8,9 @@
         <div class="mb-2">
           <input class="form-control" formControlName="user" placeholder="Your Name" required>
         </div>
+        <div *ngIf="commentForm.get('description')?.errors?.['maxlength']" class="text-danger">
+          Maximum length exceeded (90 characters allowed)
+        </div>
         <div class="mb-2">
           <textarea class="form-control" formControlName="message" placeholder="Write a comment..." required></textarea>
         </div>

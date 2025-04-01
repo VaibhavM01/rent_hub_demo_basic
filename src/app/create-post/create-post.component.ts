@@ -41,8 +41,8 @@ export class CreatePostComponent {
 
     this.postForm = this.fb.group({
       apartmentOption: ['', Validators.required],
-      title: ['', Validators.required],
-      fullName: ['',Validators.required],
+      title: ['', Validators.required, Validators.maxLength(20)],
+      fullName: ['',Validators.required,Validators.maxLength(50)],
       isShared: ['', Validators.required],
       location: ['', Validators.required],
       squareFeet: ['', [Validators.required, Validators.min(100)]],
@@ -52,7 +52,7 @@ export class CreatePostComponent {
       leased: ['', Validators.required],
       furnished: ['', Validators.required],
       amenities: [amenitiesGroup,Validators.required],
-      description: ['', [Validators.required, Validators.maxLength(1400)]],
+      description: ['', [Validators.required, Validators.maxLength(200)]],
       images: [[]]
     });
   }

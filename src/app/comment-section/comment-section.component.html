@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header">
+      <h5>Comments</h5>
+    </div>
+    <div class="card-body">
+      <!-- Comment Form -->
+      <form [formGroup]="commentForm" (ngSubmit)="submitComment()">
+        <div class="mb-2">
+          <input class="form-control" formControlName="user" placeholder="Your Name" required>
+        </div>
+        <div class="mb-2">
+          <textarea class="form-control" formControlName="message" placeholder="Write a comment..." required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="commentForm.invalid">Post Comment</button>
+      </form>
+   
+      <hr>
+   
+      <!-- Display Comments -->
+      <div *ngFor="let comment of comments">
+        <div class="d-flex justify-content-between align-items-center">
+          <strong>{{ comment.user }}</strong> 
+          <small class="text-muted">{{ comment.createdAt | date:'short' }}</small>
+        </div>
+        <p>{{ comment.message }}</p>
+        <button class="btn btn-sm btn-danger" (click)="deleteComment(comment.id!, postId!)">Delete</button>
+        <hr>
+      </div>
+    </div>
+  </div>
+   

@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+    background: linear-gradient(to bottom right, #f59d5e, #b3e5fc); /* Light cyan to light blue */
+    height: 100vh; /* Ensures the gradient covers the full viewport e0f7fa*/
+    margin: 0;
+  }
+
+ 

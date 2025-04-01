@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/login">Rent-HUB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item" *ngIf="isLoggedIn">
+              <span class="nav-link"> Welcome, {{username}}</span>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" *ngIf="!isLoggedIn" routerLink="/login">login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="!isLoggedIn" routerLink="/signup">SingUp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="isLoggedIn" routerLink="/createpost">Create-Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="isLoggedIn" (click)="logOut()" style="cursor: pointer;">Log Out</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <input
+        type="text"
+        class="form-control me-4 p-2 m-2"
+        placeholder="Search..."
+        [(ngModel)]="searchQuery"
+        (input)="onSearch()"
+      />
+        </div>
+      </div>
+    </div>
+  </nav>
+  

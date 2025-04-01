@@ -1,0 +1,24 @@
+<div class="container mt-5 d-flex justify-content-center align-items-center vh-50">
+    <div class="card login-box shadow-lg p-4">
+      <h2 class="text-center">Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" placeholder="Enter email" formControlName="email" required/>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" placeholder="Enter password" formControlName="password" required />
+        </div>
+
+        <div class="text-danger" *ngIf="errorMessage">
+          {{errorMessage}}
+        </div>
+        
+        <button class="btn btn-primary w-100 vh-50 m-2" type="submit" >Login</button>
+        <button class="btn btn-primary w-100 m-2" type="button" (click)="goHome()">Home</button>
+        <a class="nav-link vh-50 greenLink" routerLink="/signup">Create a new Acccount</a>
+      </form>
+    </div>
+  </div>
+ <router-outlet></router-outlet>

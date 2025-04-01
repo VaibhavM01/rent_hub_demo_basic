@@ -1,0 +1,65 @@
+.featured-img{
+    height: 200px;
+}
+
+/* Card Container */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 6px;
+    justify-content: center;
+  }
+  
+  /* Card Styling */
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced evenly */
+    align-items: center;
+    width: 300px; /* Fixed width for uniformity */
+    height: 400px; /* Fixed height for equal-sized cards */
+    background-color: #ffecc4; /* Neutral background for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    padding: 10px;
+  }
+  
+  /* Image Styling */
+  .card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px; /* Restricts image height */
+    object-fit: cover; /* Ensures image fits without distortion */
+  }
+  
+  /* Content Styling */
+  .card-content {
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    color: #555555; /* Subtle text color for readability */
+  }
+  
+  /* Button Styling */
+  .card-button {
+    margin-top: auto; /* Pushes button to the bottom of the card */
+    padding: 10px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #007bff; /* Blue button for contrast */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .card-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }

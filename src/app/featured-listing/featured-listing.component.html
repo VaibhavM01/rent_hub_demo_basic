@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body" *ngIf="featuredRentals.length > 0">
+    <h4>Featured Listings</h4>
+    <img [src]="featuredRentals[0].image" class="card-img-top featured-img" [alt]="featuredRentals[0].title">
+    <p>{{ featuredRentals[0].description }}</p>
+    <a [routerLink]="['/post', featuredRentals[0].id]" class="btn btn-primary">View Details</a>
+
+    <!-- Favorite Button (Heart Icon) -->
+    <button class="btn btn-outline-danger" (click)="toggleFavorite()"
+      title="{{ isFavorite(featuredRentals[0].id) ? 'Remove from Favorites' : 'Mark as Favorite' }}">
+      <i [class]="isFavorite(featuredRentals[0].id) ? 'fas fa-heart text-danger' : 'far fa-heart'"></i>
+    </button>
+
+  </div>
+</div>

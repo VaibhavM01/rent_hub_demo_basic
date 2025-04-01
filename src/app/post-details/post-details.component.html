@@ -1,0 +1,57 @@
+<div *ngIf="post; else errorTemplate" class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h4>{{ post.title }}</h4>
+      
+    </div>
+   
+    <div class="card-body">
+      <p><strong>Location:</strong> {{ post.location }}</p>
+      <p><strong>Size:</strong> {{ post.squareFeet }} sq. ft.</p>
+  <p>Rent: ${{ post.rent }} ({{ post.priceMode }})</p>
+      <p><strong>Negotiable:</strong> {{ post.isNegotiable ? 'Yes' : 'No' }}</p>
+      <p><strong>Furnished:</strong> {{ post.furnished ? 'Yes' : 'No' }}</p>
+      <p><strong>Description:</strong> {{ post.description }}</p>
+   
+      <!-- Images -->
+      <h5>Images:</h5>
+      <div class="image-gallery">
+        <img *ngFor="let img of imgaelist" [src]="img" alt="Rental Image" class="img-thumbnail">
+      </div>
+   
+      <!-- Amenities -->
+      <h5>Amenities:</h5>
+      <ul>
+        <li *ngFor="let amenity of post.amenities">{{ amenity }}</li>
+      </ul>
+      <div>
+        <!-- Favorite Button (Heart Icon) -->
+        <button class="btn btn-outline-danger" (click)="toggleFavorite()"
+                title="{{ isFavorite ? 'Remove from Favorites' : 'Mark as Favorite' }}">
+          <i [class]="isFavorite ? 'fas fa-heart text-danger' : 'far fa-heart'"></i>
+        </button>
+   
+        <!-- Comment Button (Speech Bubble Icon) -->
+        <button class="btn btn-outline-info ms-2" (click)="toggleComments()"
+                title="{{ showComments ? 'Hide Comments' : 'Show Comments' }}">
+          <i class="far fa-comments"></i>
+        </button>
+       
+        <button class="btn btn-outline-info m-2" (click)="goBack()"> Home</button>
+
+      </div>
+      
+      <!-- Lazy Load Comment Section -->
+      <div *ngIf="showComments" class="p-4">
+  <app-comment-section [postId]="post.id"></app-comment-section>
+      </div>
+    </div>
+  </div>
+   
+  <!-- Error Message if Post is Undefined -->
+  <ng-template #errorTemplate>
+    <div class="alert alert-danger text-center">
+      <h4> Post Not Found</h4>
+      <p>The requested post does not exist or has been removed.</p>
+      <a routerLink="/home" class="btn btn-primary">Go Back to Home</a>
+    </div>
+  </ng-template>

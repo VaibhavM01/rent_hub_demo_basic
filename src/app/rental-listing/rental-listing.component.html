@@ -1,0 +1,20 @@
+<div class="container mt-4">
+    <div class="row">
+      <div *ngFor="let rental of filteredPosts" class="col-md-4">
+        <div class="card mb-4">
+          
+          <img [src]="rental.images[0]" class="card-img-top" [alt]="rental.title">
+          <div class="card-body">
+            <h5 class="card-title">{{ rental.title }}</h5>
+            <p class="card-text">{{ rental.description }}</p>
+            <a [routerLink]="['/post', rental.id]" class="btn btn-primary">View Details</a>
+            <!-- Favorite Button -->
+            <button class="btn btn-outline-danger" (click)="toggleFavorite(rental.id!)"
+            title="{{isFavorite(rental.id!) ? 
+            'Remove from Favorites' : 'Mark as Favorite' }}">
+            <i [class]="isFavorite(rental.id!) ? 'fas fa-heart text-danger' : 'far fa-heart'"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>

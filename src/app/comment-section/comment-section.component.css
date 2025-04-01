@@ -1,0 +1,13 @@
+.card {
+    max-width: 600px;
+    margin: auto;
+  }
+   
+  textarea {
+    resize: none;
+  }
+   
+  button {
+    margin-top: 10px;
+  }
+   

@@ -1,0 +1,25 @@
+<div class="container mt-4">
+    <h2>Preview Post</h2>
+    <div class="card p-4">
+      <h4> Title : {{postData?.postTitle }}</h4>
+      <h5> Full Name : {{postData?.fullName }}</h5>
+      <h5>Apartment Type:  {{ postData?.apartmentOption }}</h5>
+      <p><strong>Location:</strong> {{ postData?.location }}</p>
+      <p><strong>Square Feet:</strong> {{ postData?.squareFeet }}</p>
+      <p><strong>Stay/lease type :</strong> {{ postData?.leased}}</p>
+      <p>Rent: ${{ postData.rent }} ({{ postData?.priceMode }})</p>
+      <p><strong>Furnished:</strong> {{ postData?.furnished ? 'Yes' : 'No' }}</p>
+      <p><strong>Amenities:</strong> {{ postData?.amenities.join(', ') }}</p>
+      <p><strong>Description:</strong> {{ postData?.description }}</p>
+   
+      <div *ngIf="postData?.photos.length">
+        <h5>Uploaded Images:</h5>
+        <div class="d-flex">
+          <img *ngFor="let img of postData.photos" [src]="img" class="img-thumbnail me-2" style="width: 100px;">
+        </div>
+      </div>
+   
+      <button class="btn btn-secondary mt-3" (click)="goBack()">Edit</button>
+      <button type="submit" class="btn btn-primary mt-3 ms-2" (click)="submitPost()">Submit</button>
+    </div>
+  </div>

@@ -93,7 +93,7 @@ import { User } from '../models/user';
   // ================= User Authentication (Local Storage for Persistence) ================= 
 
   private userKey = 'users'; // Key for storing users in localStorage
-  private sessionKey = 'loggedInUser'; // Key for session storage
+  private sessionKey = 'user_sessionKey'; // Key for session storage
  
 
  
@@ -118,14 +118,14 @@ import { User } from '../models/user';
   user.id = users.length + 1;
     user.createdAt = new Date();
     users.push(user);
-    localStorage.setItem(this.userKey, JSON.stringify(users));
+    localStorage.setItem(this.sessionKey, JSON.stringify(users));
     return true;
   }
  
   // Get all registered users
   getUsers(): User[] {
     
-    const users = localStorage.getItem(this.userKey);
+    const users = localStorage.getItem(this.sessionKey);
     const result = users ? JSON.parse(users) : [];
     return this.ensureArray(result);
   }

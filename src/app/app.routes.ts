@@ -29,31 +29,26 @@ export const routes: Routes = [
     { 
         path: '',
         component: WelcomePageComponent,
-        title: 'Welcome Page'
 
     },
     { 
         path: 'home',
         component: WelcomePageComponent,
-        title: 'Welcome Page'
 
     },
     { 
         path: 'login',
         component: LoginComponent,
-        title: 'Login Page'
 
     },
     { 
         path: 'signup',
         component: UserRegistrationComponent,
-        title: 'Registration'
 
     },
     {
         path:'createpost',
         component:CreatePostComponent,
-        title: 'Create Post',
         canActivate :[authGuard]
          
     },

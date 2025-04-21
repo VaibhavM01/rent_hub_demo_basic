@@ -18,7 +18,7 @@ export class FeaturedListingComponent implements OnInit{
     id: 1,
     title: 'Luxury Apartment in Downtown',
     description: 'A spacious 2-bedroom apartment with modern amenities.',
-    image: './Retal-photo/pexels-photo-2079234.jpeg',
+    image: '/rent_hub_demo_basic/Retal-photo/pexels-photo-2079234.jpeg',
     price: 1500,
     location: 'New York, NY',
     

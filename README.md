@@ -1,5 +1,7 @@
 # RentHub
 
+#RentHub page URL - https://vaibhavm01.github.io/rent_hub_demo_basic/
+
 RentHub is an Angular-based application designed to manage rental services. It provides a user-friendly interface for users to explore, create, and manage rental posts. The project uses modern web technologies and libraries for styling and functionality.
 
 ## Features

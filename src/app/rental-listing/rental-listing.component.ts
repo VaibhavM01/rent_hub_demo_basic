@@ -35,7 +35,7 @@ export class RentalListingComponent implements OnInit {
     furnished: true,
     amenities: ["WiFi", "Swimming Pool", "Gym", "Parking"],
     description: "A beautiful, well-furnished apartment with a stunning sea view.",
-    images: ["/Retal-photo/large-home-residential-house.jpeg"]
+    images: ["/rent_hub_demo_basic/Retal-photo/large-home-residential-house.jpeg"]
   },
   {
     id: 2,
@@ -50,7 +50,7 @@ export class RentalListingComponent implements OnInit {
     furnished: false,
     amenities: ["Elevator", "Laundry", "Security"],
     description: "A stylish loft in the heart of the city, perfect for young professionals.",
-    images: ["/Retal-photo/stock-photo-new-moder.jpg"]
+    images: ["/rent_hub_demo_basic/Retal-photo/stock-photo-new-moder.jpg"]
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ export class RentalListingComponent implements OnInit {
     furnished: true,
     amenities: ["WiFi", "Garden", "Pet Friendly"],
     description: "Peaceful and cozy apartment with a beautiful park view.",
-    images: ["/Retal-photo/istockphoto-1255835529-1024x1024.jpg"]
+    images: ["/rent_hub_demo_basic/Retal-photo/istockphoto-1255835529-1024x1024.jpg"]
   },
   {
     id: 4,
@@ -80,7 +80,7 @@ export class RentalListingComponent implements OnInit {
     furnished: true,
     amenities: ["Roof Deck", "Gym", "Swimming Pool", "24/7 Security"],
     description: "A luxury penthouse with breathtaking skyline views and top-notch facilities.",
-    images:["/Retal-photo/istockphoto-175537632-1024x1024.jpg"]
+    images:["/rent_hub_demo_basic/Retal-photo/istockphoto-175537632-1024x1024.jpg"]
   }];
    
   constructor(private rentalService: RentalListingService,
